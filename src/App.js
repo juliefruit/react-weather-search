@@ -1,13 +1,11 @@
-
 import './App.css';
+import Weather from './Weather';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
   return (
     <div className="App">
-      <h1>
-        React Weather App
-      </h1>
+      <Weather defaultCity="Vancouver"/>
       <footer>
         This project was coded by {" "}
         <a href='https://www.instagram.com/juliefruit_/' target="_blank" rel="noreferrer">
