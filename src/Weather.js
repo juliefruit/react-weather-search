@@ -1,5 +1,6 @@
 import React , {useState} from "react";
-import FormattedDate from "./FormattedDate";
+
+import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./Weather.css";
 
@@ -37,41 +38,12 @@ export default function Weather(props){
                   </div>
                 </div>
               </form>
-              <h1>
-                {weatherData.city}
-              </h1>
-              <h3>
-                <FormattedDate date={weatherData.date} />
-              </h3>
-              <img
-              src={weatherData.iconUrl}
-              alt={weatherData.description} />
-              <p className="text-capitalize">
-                {weatherData.description}
-              </p>
-              <hr />
-              <p>
-                Display Temperature in Fahrenheit
-              </p>
-          </div>
-          <div className="col-6">
-            <h2>
-              {Math.round(weatherData.temperature)}<span className="temp-unit">°C</span>
-            </h2>
-            <ul>
-              <li>
-                Humidity: {Math.round(weatherData.humidity)}%
-              </li>
-              <li>
-                Wind: {Math.round(weatherData.wind)}km/h
-              </li>
-            </ul>
-          </div>
+              <WeatherInfo data={WeatherData}/>
         </div>
       </div>
     );
   } else {
-    const apiKey = "1fad0a2b796c76984806752d55e86c73";
+    let apiKey = "1fad0a2b796c76984806752d55e86c73";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`
     axios.get(apiUrl).then(handleResponse);
     return "Loading..."
