@@ -7,9 +7,22 @@
   font-weight: 200;
 }
 
+.Weather .form-control {
+  border: 1px solid #ffffff;
+  transition: none;
+  width: 50%;
+  margin: 0px -10px 0px 0px;
+}
+
+.Weather .form-control:focus {
+  box-shadow: none;
+  border-color: #ffe168;
+}
+
 .Weather .btn-primary {
   background-color: #9C9DC2;
   border-color: #9C9DC2;
+  margin: 10px 10px;
 }
 
 .Weather .btn-primary:hover {
