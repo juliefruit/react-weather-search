@@ -11,10 +11,14 @@ export default function App() {
         This project was coded by {" "}
         <a href='https://www.instagram.com/juliefruit_/' target="_blank" rel="noopener noreferrer">
           Julie Wright
-          </a> & is{" "}
+          </a>, is open sourced on {" "}
         <a href='https://github.com/juliefruit/react-weather-search' target="_blank" rel="noopener noreferrer">
-            open sourced on GitHub!
+            GitHub
           </a>
+          , and hosted on {" "}
+          <a href='https://zesty-stardust-83af10.netlify.app/' target="_blank" rel="noopener noreferrer">
+            Netlify
+            </a>
       </footer>
     </div>
   );
