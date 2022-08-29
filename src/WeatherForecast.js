@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import WeatherForecastDay from "./WeatherForecastDay";
 import "./WeatherForecast.css"
 import axios from "axios";
 
 export default function WeatherForecast(props) {
+
+//useState for code to run only when the API is called 
   let [loaded, setLoaded] = useState(false);
+//useState for forecast data to be set upon API call  
   let [forecast, setForecast] = useState(null);
+
+//useEffect for forecast temperatures to change upon city search
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coordinates])
 
   function handleResponse(response){
     setForecast(response.data.daily);
@@ -13,10 +21,12 @@ export default function WeatherForecast(props) {
     setLoaded(true);
   }
 
+//Display daily weather stats
   if (loaded) {
     return(
       <div className="WeatherForecast">
         <div className="row">
+{/*looping through the daily forecast for the next 5 days*/}
           {forecast.map(function(dailyForecast, index) {
             if (index < 5){
           return(

@@ -5,6 +5,7 @@ import WeatherIcon from "./WeatherIcon";
 
  
 export default function WeatherInfo(props) {
+//Weather data
   return (
     <div className="row">
       <div className="col-5">

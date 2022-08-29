@@ -2,6 +2,7 @@ import React from "react";
 import ReactAnimatedWeather from 'react-animated-weather';
 
 export default function WeatherIcon(props) {
+//Matching icon codes from the OpenWeather API with an animated icon page for use with npm
   const codeMapping = {
     "01d": "CLEAR_DAY",
     "01n": "CLEAR_NIGHT",
